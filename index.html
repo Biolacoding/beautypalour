@@ -15,15 +15,16 @@
         }
 
         :root {
-            /* Color Palette */
-            --primary: #d4a574;
-            --primary-dark: #b89366;
-            --secondary: #e8b4bc;
-            --accent: #a2836e;
-            --dark: #3a2c2c;
-            --light: #f9f5f0;
+            /* RED & BLACK Color Palette */
+            --primary: #c62828; /* Dark Red */
+            --primary-dark: #b71c1c; /* Darker Red */
+            --primary-light: #ff5252; /* Light Red */
+            --secondary: #212121; /* Dark Gray/Black */
+            --accent: #d32f2f; /* Accent Red */
+            --dark: #000000; /* Pure Black */
+            --light: #f5f5f5; /* Light Gray */
             --white: #ffffff;
-            --gray: #777777;
+            --gray: #757575;
             --success: #2ecc71;
             --error: #e74c3c;
             
@@ -158,6 +159,7 @@
             cursor: pointer;
             transition: all var(--transition);
             gap: 0.5rem;
+            text-decoration: none;
         }
 
         .btn-primary {
@@ -186,6 +188,16 @@
         .btn-large {
             padding: 1rem 2.5rem;
             font-size: 1.1rem;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            border: none;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
         }
 
         .text-center { text-align: center; }
@@ -338,8 +350,8 @@
         /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                        url('img/WhatsApp\ Image\ 2026-02-06\ at\ 1.34.52\ PM\ \(1\).jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -404,7 +416,7 @@
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 10px 30px rgba(198, 40, 40, 0.15);
         }
 
         .service-icon {
@@ -429,7 +441,7 @@
 
         .service-time {
             display: inline-block;
-            background: rgba(212, 165, 116, 0.1);
+            background: rgba(198, 40, 40, 0.1);
             color: var(--primary);
             padding: 0.3rem 1rem;
             border-radius: var(--radius-xl);
@@ -473,7 +485,7 @@
         }
 
         .service-category:hover {
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 8px 25px rgba(198, 40, 40, 0.1);
         }
 
         .category-title {
@@ -571,7 +583,7 @@
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: rgba(212, 165, 116, 0.1);
+            background: rgba(198, 40, 40, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -672,7 +684,7 @@
 
         .team-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         .team-img {
@@ -719,12 +731,9 @@
             color: var(--white);
         }
 
-        /* ===== BOOKING SECTION ===== */
+        /* ===== BOOKING SECTION - UPDATED ===== */
         .booking {
-            background: linear-gradient(rgba(58, 44, 44, 0.9), rgba(58, 44, 44, 0.9)),
-                        url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #000000 0%, #212121 100%);
             color: var(--white);
         }
 
@@ -737,14 +746,57 @@
             background: var(--primary);
         }
 
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .booking-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .booking-info h3 {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+            font-size: 1.8rem;
+        }
+
+        .booking-features {
+            display: grid;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .booking-feature {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: flex-start;
+        }
+
+        .booking-feature i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 0.3rem;
+        }
+
         .booking-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             padding: var(--space-lg);
             border-radius: var(--radius-lg);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .form-grid {
@@ -761,6 +813,7 @@
             display: block;
             margin-bottom: var(--space-xs);
             font-weight: 500;
+            color: var(--white);
         }
 
         .form-control {
@@ -784,12 +837,41 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
         .error-message {
             color: var(--error);
             font-size: 0.85rem;
             margin-top: 0.3rem;
             display: block;
             min-height: 1.2rem;
+        }
+
+        .booking-note {
+            background: rgba(255, 255, 255, 0.05);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-md);
+            border-left: 4px solid var(--primary);
+        }
+
+        .booking-note p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .booking-options {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin-top: var(--space-lg);
         }
 
         /* ===== CONTACT SECTION ===== */
@@ -820,7 +902,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: rgba(212, 165, 116, 0.1);
+            background: rgba(198, 40, 40, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1216,6 +1298,10 @@
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
+
+            .booking-options {
+                flex-direction: column;
+            }
         }
 
         /* ===== LOADING SPINNER ===== */
@@ -1362,7 +1448,7 @@
         }
 
         .comparison-table tr:hover {
-            background: rgba(212, 165, 116, 0.1);
+            background: rgba(198, 40, 40, 0.05);
         }
 
         /* ===== BUSINESS HOURS WIDGET ===== */
@@ -1411,6 +1497,57 @@
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
+        }
+
+        /* ===== WHATSAPP SUCCESS MODAL ===== */
+        .whatsapp-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .whatsapp-modal-content {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .whatsapp-success-icon {
+            font-size: 4rem;
+            color: #25D366;
+            margin-bottom: var(--space-md);
+        }
+
+        .whatsapp-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .whatsapp-modal-close:hover {
+            color: var(--primary);
         }
     </style>
 </head>
@@ -1490,11 +1627,7 @@
             
             <div class="about-content">
                 <div class="about-image animate">
-                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Salon" class="about-img">
-                    <div class="experience-badge">
-                        <div class="experience-years">12+</div>
-                        <div>Years Experience</div>
-                    </div>
+                    <img src="img/WhatsApp Image 2026-02-06 at 1.34.52 PM (1).jpeg" alt="Our Salon" class="about-img">
                 </div>
                 
                 <div class="about-text animate">
@@ -1509,8 +1642,8 @@
                         </div>
                         <div class="hours-list">
                             <li><span>Monday - Saturday</span> <span>9:00 AM - 8:00 PM</span></li>
-                            <li><span>Sunday</span> <span>10:00 AM - 6:00 PM</span></li>
-                            <li><span>Barber Services</span> <span>9:30 AM - 8:00 PM</span></li>
+                            <li><span>Sunday</span> <span>2:00 PM - 8:00 PM</span></li>
+                            <li><span>Barber Services</span> <span>9:00 AM - 8:00 PM</span></li>
                         </div>
                     </div>
                     
@@ -1588,7 +1721,7 @@
                     <div class="service-time">
                         <i class="fas fa-clock"></i> 9:00 AM - 8:00 PM
                     </div>
-                    <div class="service-price">From ₦5,000</div>
+                    <div class="service-price">From ₦15,000</div>
                     <ul class="service-list">
                         <li>Hair Washing & Treatment</li>
                         <li>Cutting & Styling</li>
@@ -1682,28 +1815,168 @@
                 <div class="service-category animate">
                     <div class="category-title">
                         <i class="fas fa-cut"></i>
-                        <h3>Hair Services</h3>
+                        <h3>HairCode Services</h3>
                     </div>
                     <div class="category-services">
-                        <div class="category-service">
-                            <span>Hair Cutting & Styling</span>
-                            <span class="service-price-tag">₦3,000</span>
+                         <div class="category-service">
+                            <span>Loosing of Braids</span>
+                            <span class="service-price-tag">₦2,000</span>
                         </div>
-                        <div class="category-service">
-                            <span>Hair Washing & Treatment</span>
-                            <span class="service-price-tag">₦2,500</span>
+                         <div class="category-service">
+                            <span>Loosing of Natural Hair</span>
+                            <span class="service-price-tag">₦2,000</span>
                         </div>
-                        <div class="category-service">
-                            <span>Blow Dry & Styling</span>
+                         <div class="category-service">
+                            <span>Washing & Setting</span>
                             <span class="service-price-tag">₦4,000</span>
                         </div>
                         <div class="category-service">
-                            <span>Hair Coloring</span>
-                            <span class="service-price-tag">From ₦8,000</span>
+                            <span>Retouching </span>
+                            <span class="service-price-tag">₦3,000</span>
                         </div>
                         <div class="category-service">
-                            <span>Hair Treatment</span>
-                            <span class="service-price-tag">₦6,000</span>
+                            <span>Retouching & Setting </span>
+                            <span class="service-price-tag">₦5,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Regular Streaming </span>
+                            <span class="service-price-tag">₦5,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Organic Streaming </span>
+                            <span class="service-price-tag">₦10,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>All back Didi/Weaving</span>
+                            <span class="service-price-tag">₦2,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Ghana Weaving (BIG)</span>
+                            <span class="service-price-tag">₦8,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Ghana Weaving (MEDIUM)</span>
+                            <span class="service-price-tag"> ₦10,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Ghana Weaving (SMALL)</span>
+                            <span class="service-price-tag">₦12,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Ghana Weaving & Braids for guys</span>
+                            <span class="service-price-tag">₦5,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>2-Step Ghana Weaaving</span>
+                            <span class="service-price-tag">₦15,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Normal Braid(BIG)</span>
+                            <span class="service-price-tag">₦8,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Normal Braid(MEDIUM)</span>
+                            <span class="service-price-tag">₦10,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Normal Braid(SMALL)</span>
+                            <span class="service-price-tag">₦12,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Knotless Braids(BIG)</span>
+                            <span class="service-price-tag">₦10,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Knotless Braids(medium)</span>
+                            <span class="service-price-tag">₦13,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Knotless Braids(small)</span>
+                            <span class="service-price-tag">₦15,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Passion Twist</span>
+                            <span class="service-price-tag">₦20,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Kinky Braids</span>
+                            <span class="service-price-tag">₦12,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>installation</span>
+                            <span class="service-price-tag">₦20,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>HOBO Braids</span>
+                            <span class="service-price-tag">₦18,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Packing Gel</span>
+                            <span class="service-price-tag">₦8,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Stitches Braids</span>
+                            <span class="service-price-tag">₦10,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Fixing of Weaving&Crushet</span>
+                            <span class="service-price-tag">₦13,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>fixing of closure</span>
+                            <span class="service-price-tag">₦10,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Revamping of hair</span>
+                            <span class="service-price-tag">₦10,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Wigging of frontal</span>
+                            <span class="service-price-tag">₦12,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Wigging of Closure </span>
+                            <span class="service-price-tag">₦10,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>Stretching or curling</span>
+                            <span class="service-price-tag">₦5,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Stretching or Natural Hair</span>
+                            <span class="service-price-tag">₦2,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Ventilation of Closure</span>
+                            <span class="service-price-tag">₦15,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Ventilation of Frontal</span>
+                            <span class="service-price-tag">₦30,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Colouring Weavon</span>
+                            <span class="service-price-tag">₦20,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Black Dye</span>
+                            <span class="service-price-tag">₦3,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>TINT</span>
+                            <span class="service-price-tag">₦8,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Cutting Of Nails</span>
+                            <span class="service-price-tag">₦2,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Hydro Jelly Pedicure</span>
+                            <span class="service-price-tag">₦15,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Organic Pedicure</span>
+                            <span class="service-price-tag">₦12,000</span>
                         </div>
                     </div>
                 </div>
@@ -1711,29 +1984,62 @@
                 <!-- Nail Services Category -->
                 <div class="service-category animate">
                     <div class="category-title">
-                        <i class="fas fa-hand-sparkles"></i>
-                        <h3>Nail Services</h3>
+                       <i class="fas fa-spa"></i>
+                        <h3>Facial & Skin Cares</h3>
                     </div>
                     <div class="category-services">
                         <div class="category-service">
-                            <span>Basic Manicure</span>
-                            <span class="service-price-tag">₦5,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Basic Pedicure</span>
+                            <span>Glowing  Facials</span>
                             <span class="service-price-tag">₦10,000</span>
                         </div>
                         <div class="category-service">
-                            <span>Manicure & Pedicure</span>
+                            <span>Derma Planning Facials</span>
                             <span class="service-price-tag">₦15,000</span>
                         </div>
                         <div class="category-service">
-                            <span>Nail Art</span>
-                            <span class="service-price-tag">From ₦3,000</span>
+                            <span>Deep Cleaning Facials</span>
+                            <span class="service-price-tag">₦25,000</span>
                         </div>
                         <div class="category-service">
-                            <span>Gel Nails</span>
-                            <span class="service-price-tag">From ₦7,000</span>
+                            <span>Anti-Aging Facials</span>
+                            <span class="service-price-tag">₦25,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Whitening Facials</span>
+                            <span class="service-price-tag"> ₦25,000</span>
+                        </div>
+                        <h3 style="margin-top: 1rem; color: var(--primary);">MASSAGE</h3>
+                         <div class="category-service">
+                            <span>Swedish Massage</span>
+                            <span class="service-price-tag"> ₦20,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Aromatherapy</span>
+                            <span class="service-price-tag"> ₦20,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Deep Tissue Massage</span>
+                            <span class="service-price-tag"> ₦25,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Body Streaming</span>
+                            <span class="service-price-tag"> ₦30,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Teeth Whitening</span>
+                            <span class="service-price-tag"> ₦30,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Couple Massage</span>
+                            <span class="service-price-tag"> ₦40,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Micro BLADING</span>
+                            <span class="service-price-tag"> ₦40,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Body Whitening</span>
+                            <span class="service-price-tag"> ₦40,000</span>
                         </div>
                     </div>
                 </div>
@@ -1741,29 +2047,62 @@
                 <!-- Facial Services Category -->
                 <div class="service-category animate">
                     <div class="category-title">
-                        <i class="fas fa-spa"></i>
-                        <h3>Facial & Skin Care</h3>
+                        <i class="fas fa-hand-sparkles"></i>
+                        <h3>Nail Service</h3>
                     </div>
                     <div class="category-services">
                         <div class="category-service">
-                            <span>Basic Facial</span>
+                            <span>Acryli with Design</span>
+                            <span class="service-price-tag">₦18,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Acrylic  </span>
+                            <span class="service-price-tag">₦13,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Gel Paint</span>
                             <span class="service-price-tag">₦8,000</span>
                         </div>
                         <div class="category-service">
-                            <span>Gold Facial</span>
-                            <span class="service-price-tag">₦15,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Anti-Aging Facial</span>
+                            <span>Gel Paint with Design</span>
                             <span class="service-price-tag">₦12,000</span>
                         </div>
                         <div class="category-service">
-                            <span>Acne Treatment</span>
-                            <span class="service-price-tag">₦10,000</span>
+                            <span>Arrylic French Tips</span>
+                            <span class="service-price-tag">₦15,000</span>
                         </div>
                         <div class="category-service">
-                            <span>Skin Brightening</span>
-                            <span class="service-price-tag">₦18,000</span>
+                            <span>Gel paint on normal Nails</span>
+                            <span class="service-price-tag">₦3,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Fixing of toes Acrylic</span>
+                            <span class="service-price-tag">₦7,000</span>
+                        </div>
+                        <div class="category-service">
+                            <span>Fixing of toes Gel</span>
+                            <span class="service-price-tag">₦4,000</span>
+                        </div>
+                         <div class="category-service">
+                            <span>Wrapping of Nails</span>
+                            <span class="service-price-tag">₦12,000</span>
+                        </div>
+                        <h3 style="margin-top: 1rem; color: var(--primary);">SEMI PERMANENT LASHES</h3>
+                        <div class="category-service">
+                            <span>VOLUME </span>
+                            <span class="service-price-tag">₦25,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>HYBRID </span>
+                            <span class="service-price-tag">₦20,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>CLASSIC </span>
+                            <span class="service-price-tag">₦15,000</span>
+                        </div>
+                          <div class="category-service">
+                            <span>READY MADE LASHES</span>
+                            <span class="service-price-tag">₦5,000</span>
                         </div>
                     </div>
                 </div>
@@ -1798,102 +2137,57 @@
                     </div>
                 </div>
                 
-                <!-- Waxing Services Category -->
-                <div class="service-category animate">
-                    <div class="category-title">
-                        <i class="fas fa-wind"></i>
-                        <h3>Waxing Services</h3>
-                    </div>
-                    <div class="category-services">
-                        <div class="category-service">
-                            <span>Full Arms Waxing</span>
-                            <span class="service-price-tag">₦4,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Full Legs Waxing</span>
-                            <span class="service-price-tag">₦6,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Underarms Waxing</span>
-                            <span class="service-price-tag">₦3,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Bikini Waxing</span>
-                            <span class="service-price-tag">₦5,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Full Body Waxing</span>
-                            <span class="service-price-tag">₦15,000</span>
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- Massage Services Category -->
-                <div class="service-category animate">
-                    <div class="category-title">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <h3>Massage Services</h3>
-                    </div>
-                    <div class="category-services">
-                        <div class="category-service">
-                            <span>Swedish Massage</span>
-                            <span class="service-price-tag">₦10,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Aromatherapy Massage</span>
-                            <span class="service-price-tag">₦12,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Deep Tissue Massage</span>
-                            <span class="service-price-tag">₦15,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Head & Shoulder Massage</span>
-                            <span class="service-price-tag">₦5,000</span>
-                        </div>
-                        <div class="category-service">
-                            <span>Foot Reflexology</span>
-                            <span class="service-price-tag">₦8,000</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <!-- Special Packages -->
             <div class="text-center mt-4 animate">
                 <h3 class="mb-sm">Special Packages</h3>
                 <p class="mb-md">Save more with our combo packages!</p>
-                <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 2rem;">
+                 
                     <div class="service-card">
-                        <h4>Beauty Day Package</h4>
-                        <div class="service-price">₦25,000</div>
-                        <ul class="service-list">
-                            <li>Hair Cutting & Styling</li>
-                            <li>Basic Manicure</li>
-                            <li>Basic Facial</li>
-                            <li><strong>Save ₦3,000</strong></li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <h4>Luxury Spa Package</h4>
+                        <h4>Beauty Day Package (MALE)</h4>
                         <div class="service-price">₦45,000</div>
                         <ul class="service-list">
-                            <li>Complete Hairdressing</li>
+                            <li>Hair Cut</li>
                             <li>Manicure & Pedicure</li>
-                            <li>Gold Facial</li>
+                            <li>Glowing Facial</li>
                             <li>Swedish Massage</li>
                             <li><strong>Save ₦8,000</strong></li>
                         </ul>
                     </div>
                     <div class="service-card">
-                        <h4>Bridal Package</h4>
-                        <div class="service-price">₦60,000</div>
+                        <h4>Beauty Day Package (FEMALE)</h4>
+                        <div class="service-price">₦55,000</div>
                         <ul class="service-list">
-                            <li>Bridal Makeup</li>
                             <li>Hair Styling</li>
                             <li>Manicure & Pedicure</li>
-                            <li>Gold Facial</li>
-                            <li><strong>Save ₦15,000</strong></li>
+                            <li>Glowing Facial</li>
+                            <li>Lash Extension</li>
+                            <li><strong>Save ₦8,000</strong></li>
+                        </ul>
+                    </div>
+                       <div class="service-card">
+                        <h4>Luxury-spa Package</h4>
+                        <div class="service-price">₦55,000</div>
+                        <ul class="service-list">
+                            <li>Hair Styling</li>
+                            <li> Manicure</li>
+                            <li>Pedicure</li>
+                            <li>Swedish massage</li>
+                            <li><strong>Save ₦3,000</strong></li>
+                        </ul>
+                    </div>
+                         <div class="service-card">
+                        <h4>Photoshoot Package</h4>
+                        <div class="service-price">₦50,000</div>
+                        <ul class="service-list">
+                            <li>Hair Styling</li>
+                            <li>Acrylic Nail</li>
+                            <li> Manicure</li>
+                            <li>Pedicure</li>
+                            <li>Swedish massage</li>
+                            <li>Glowing Facials<li>
+                            <li><strong>Save ₦3,000</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -2104,118 +2398,163 @@
         </div>
     </section>
 
-    <!-- Booking Section -->
+    <!-- Booking Section - UPDATED -->
     <section class="section booking" id="booking">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Book an Appointment</h2>
-                <p class="section-subtitle">Schedule your beauty transformation today. Fill out the form below and we'll get back to you shortly.</p>
+                <p class="section-subtitle">Schedule your beauty transformation today. Fill out the form below to book via WhatsApp.</p>
             </div>
             
-            <div class="booking-form">
-                <form id="appointmentForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label" for="name">Full Name *</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
-                            <span class="error-message" id="name-error"></span>
+            <div class="booking-container animate">
+                <div class="booking-info">
+                    <h3>Why Book With Us?</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-md);">
+                        Experience premium beauty services with our certified professionals. 
+                        We guarantee satisfaction with every visit.
+                    </p>
+                    
+                    <div class="booking-features">
+                        <div class="booking-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 0.3rem;">Instant Confirmation</h4>
+                                <p style="color: rgba(255,255,255,0.8); margin: 0;">Get immediate booking confirmation via WhatsApp</p>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-feature">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 0.3rem;">Flexible Scheduling</h4>
+                                <p style="color: rgba(255,255,255,0.8); margin: 0;">Book anytime, anywhere with our WhatsApp booking</p>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-feature">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 0.3rem;">24/7 Support</h4>
+                                <p style="color: rgba(255,255,255,0.8); margin: 0;">Direct customer support via WhatsApp</p>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 0.3rem;">Secure Booking</h4>
+                                <p style="color: rgba(255,255,255,0.8); margin: 0;">Your information is safe and private</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-note">
+                        <p><i class="fas fa-info-circle"></i> After submitting the form, you'll be redirected to WhatsApp to complete your booking with our team.</p>
+                    </div>
+                </div>
+                
+                <div class="booking-form">
+                    <form id="whatsappBookingForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Full Name *</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="07052728513" required>
+                                <span class="error-message" id="phone-error"></span>
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label class="form-label" for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="+234 903 503 1312" required value="+234">
-                            <span class="error-message" id="phone-error"></span>
+                            <label class="form-label" for="email">Email Address (Optional)</label>
+                            <input type="email" id="email" class="form-control" placeholder="your@email.com">
+                            <span class="error-message" id="email-error"></span>
                         </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" placeholder="haircodebeautypalour@gmail.com">
-                        <span class="error-message" id="email-error"></span>
-                    </div>
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label" for="service">Select Service *</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">Choose a service</option>
-                                <option value="hair-cutting">Hair Cutting (₦3,000)</option>
-                                <option value="hairdressing">Hairdressing (From ₦5,000)</option>
-                                <option value="manicure">Manicure (₦5,000)</option>
-                                <option value="pedicure">Pedicure (₦10,000)</option>
-                                <option value="manicure-pedicure">Manicure & Pedicure (₦15,000)</option>
-                                <option value="facial">Facial (From ₦8,000)</option>
-                                <option value="makeup">Makeup (From ₦8,000)</option>
-                                <option value="waxing">Waxing (From ₦3,000)</option>
-                                <option value="massage">Massage (From ₦5,000)</option>
-                                <option value="beauty-day">Beauty Day Package (₦25,000)</option>
-                                <option value="luxury-spa">Luxury Spa Package (₦45,000)</option>
-                                <option value="bridal">Bridal Package (₦60,000)</option>
-                            </select>
-                            <span class="error-message" id="service-error"></span>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="service">Select Service *</label>
+                                <select id="service" class="form-control" required>
+                                    <option value="">Choose a service</option>
+                                    <option value="hair-cutting">Hair Cutting (₦3,000)</option>
+                                    <option value="hairdressing">Hairdressing (From ₦5,000)</option>
+                                    <option value="manicure">Manicure (₦5,000)</option>
+                                    <option value="pedicure">Pedicure (₦10,000)</option>
+                                    <option value="manicure-pedicure">Manicure & Pedicure (₦15,000)</option>
+                                    <option value="facial">Facial (From ₦10,000)</option>
+                                    <option value="makeup">Makeup (From ₦8,000)</option>
+                                    <option value="massage">Massage (From ₦20,000)</option>
+                                    <option value="beauty-day-male">Beauty Day Package (Male) - ₦45,000</option>
+                                    <option value="beauty-day-female">Beauty Day Package (Female) - ₦55,000</option>
+                                    <option value="luxury-spa">Luxury Spa Package - ₦55,000</option>
+                                    <option value="photoshoot">Photoshoot Package - ₦50,000</option>
+                                    <option value="bridal">Bridal Makeup - ₦25,000</option>
+                                </select>
+                                <span class="error-message" id="service-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="date">Preferred Date *</label>
+                                <input type="date" id="date" class="form-control" required>
+                                <span class="error-message" id="date-error"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="time">Preferred Time *</label>
+                                <select id="time" class="form-control" required>
+                                    <option value="">Select time</option>
+                                    <option value="9:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                </select>
+                                <span class="error-message" id="time-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="staff">Preferred Staff (Optional)</label>
+                                <select id="staff" class="form-control">
+                                    <option value="">Any available staff</option>
+                                    <option value="sarah">Sarah Johnson (Hair Stylist)</option>
+                                    <option value="maria">Maria Garcia (Nail Specialist)</option>
+                                    <option value="lisa">Lisa Chen (Makeup Artist)</option>
+                                </select>
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label class="form-label" for="staff">Preferred Staff (Optional)</label>
-                            <select id="staff" class="form-control">
-                                <option value="">Any available staff</option>
-                                <option value="sarah">Sarah Johnson (Hair Stylist)</option>
-                                <option value="maria">Maria Garcia (Nail Specialist)</option>
-                                <option value="lisa">Lisa Chen (Makeup Artist)</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label" for="date">Preferred Date *</label>
-                            <input type="date" id="date" class="form-control" required>
-                            <span class="error-message" id="date-error"></span>
+                            <label class="form-label" for="message">Additional Notes</label>
+                            <textarea id="message" class="form-control" placeholder="Any special requests or requirements..." rows="3"></textarea>
                         </div>
                         
-                        <div class="form-group">
-                            <label class="form-label" for="time">Preferred Time *</label>
-                            <select id="time" class="form-control" required>
-                                <option value="">Select time</option>
-                                <option value="9:00">9:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="13:00">1:00 PM</option>
-                                <option value="14:00">2:00 PM</option>
-                                <option value="15:00">3:00 PM</option>
-                                <option value="16:00">4:00 PM</option>
-                                <option value="17:00">5:00 PM</option>
-                                <option value="18:00">6:00 PM</option>
-                                <option value="19:00">7:00 PM</option>
-                            </select>
-                            <span class="error-message" id="time-error"></span>
+                        <div class="booking-options">
+                            <button type="submit" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                            </button>
+                            
+                            <a href="tel:07052728513" class="btn btn-secondary">
+                                <i class="fas fa-phone"></i> Call to Book
+                            </a>
                         </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="message">Additional Notes</label>
-                        <textarea id="message" class="form-control" placeholder="Any special requests or requirements..." rows="4"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Prefer to book via WhatsApp?</label>
-                        <p>Click below to book directly via WhatsApp:</p>
-                        <a href="https://wa.me/2349035031312?text=Hello%20Beauty%20Parlour!%20I%20would%20like%20to%20book%20an%20appointment." 
-                           target="_blank" 
-                           class="btn btn-primary" 
-                           style="background: #25D366; border-color: #25D366;">
-                            <i class="fab fa-whatsapp"></i> Book via WhatsApp
-                        </a>
-                    </div>
-                    
-                    <div class="spinner" id="spinner"></div>
-                    <div class="success-message" id="successMessage"></div>
-                    
-                    <button type="submit" class="btn btn-primary" id="submitBtn">
-                        <i class="fas fa-calendar-check"></i> Book Appointment
-                    </button>
-                </form>
+                        
+                        <div class="booking-note" style="margin-top: var(--space-md);">
+                            <p><i class="fas fa-clock"></i> <strong>Business Hours:</strong> Mon-Sat: 9:00 AM - 8:00 PM, Sun: 2:00 PM - 8:00 PM</p>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -2248,7 +2587,7 @@
                         <div class="contact-details">
                             <h4>Call Us</h4>
                             <p>+234 903 503 1312</p>
-                            <p>+234 803 346 5065</p>
+                            <p>0705 272 8513</p>
                         </div>
                     </div>
                     
@@ -2404,7 +2743,7 @@
                 <p>&copy; 2023 Beauty Parlour. All rights reserved. | 
                     Phone: +234 903 503 1312 | 
                     Email: haircodebeautypalour@gmail.com | 
-                    Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> for beauty enthusiasts
+                    Designed with <i class="fas fa-heart" style="color: var(--primary-light);"></i> for beauty enthusiasts
                 </p>
             </div>
         </div>
@@ -2415,6 +2754,22 @@
         <button class="modal-close" id="modalClose">&times;</button>
         <div class="modal-content">
             <img src="" alt="" class="modal-img" id="modalImg">
+        </div>
+    </div>
+
+    <!-- WhatsApp Success Modal -->
+    <div class="whatsapp-modal" id="whatsappModal">
+        <div class="whatsapp-modal-content">
+            <button class="whatsapp-modal-close" id="whatsappModalClose">&times;</button>
+            <div class="whatsapp-success-icon">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>Redirecting to WhatsApp</h3>
+            <p>Your booking details have been prepared. You'll be redirected to WhatsApp to complete your booking with our team.</p>
+            <p style="margin-top: var(--space-sm); font-size: 0.9rem; color: var(--gray);">
+                <i class="fas fa-info-circle"></i> If you're not redirected automatically, please check your WhatsApp app.
+            </p>
+            <div class="spinner" id="redirectSpinner" style="display: block; margin: var(--space-md) auto;"></div>
         </div>
     </div>
 
@@ -2635,11 +2990,11 @@
                 showSlide(currentSlide);
             }, 5000);
             
-            // ===== BOOKING FORM VALIDATION =====
-            const appointmentForm = document.getElementById('appointmentForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const spinner = document.getElementById('spinner');
-            const successMessage = document.getElementById('successMessage');
+            // ===== WHATSAPP BOOKING FORM =====
+            const whatsappBookingForm = document.getElementById('whatsappBookingForm');
+            const whatsappModal = document.getElementById('whatsappModal');
+            const whatsappModalClose = document.getElementById('whatsappModalClose');
+            const redirectSpinner = document.getElementById('redirectSpinner');
             
             // Set minimum date to today
             const dateInput = document.getElementById('date');
@@ -2647,7 +3002,7 @@
             dateInput.min = today;
             
             // Form validation
-            function validateForm() {
+            function validateWhatsAppForm() {
                 let isValid = true;
                 
                 // Clear previous errors
@@ -2672,7 +3027,7 @@
                     document.getElementById('phone-error').textContent = 'Phone number is required';
                     isValid = false;
                 } else if (!phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
-                    document.getElementById('phone-error').textContent = 'Please enter a valid Nigerian phone number';
+                    document.getElementById('phone-error').textContent = 'Please enter a valid phone number';
                     isValid = false;
                 }
                 
@@ -2713,52 +3068,77 @@
                 return isValid;
             }
             
-            // Form submission
-            appointmentForm.addEventListener('submit', async function(e) {
+            // WhatsApp booking submission
+            whatsappBookingForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                if (!validateForm()) return;
+                if (!validateWhatsAppForm()) return;
                 
-                // Show loading state
-                submitBtn.style.display = 'none';
-                spinner.style.display = 'block';
+                // Get form values
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const service = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                const staff = document.getElementById('staff').value;
+                const message = document.getElementById('message').value;
                 
-                // Simulate API call
+                // Format date for display
+                const formattedDate = new Date(date).toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                // Create WhatsApp message
+                let whatsappMessage = `*NEW BOOKING REQUEST - Beauty Parlour*%0A%0A`;
+                whatsappMessage += `*Name:* ${name}%0A`;
+                whatsappMessage += `*Phone:* ${phone}%0A`;
+                if (email) whatsappMessage += `*Email:* ${email}%0A`;
+                whatsappMessage += `*Service:* ${service}%0A`;
+                whatsappMessage += `*Date:* ${formattedDate}%0A`;
+                whatsappMessage += `*Time:* ${time}:00%0A`;
+                if (staff && staff !== '') {
+                    const staffName = document.getElementById('staff').options[document.getElementById('staff').selectedIndex].text;
+                    whatsappMessage += `*Preferred Staff:* ${staffName}%0A`;
+                }
+                if (message) whatsappMessage += `*Additional Notes:* ${message}%0A`;
+                whatsappMessage += `%0A_Please confirm this booking at your earliest convenience._`;
+                
+                // Show success modal
+                whatsappModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Redirect to WhatsApp after 2 seconds
                 setTimeout(() => {
-                    // Hide spinner
-                    spinner.style.display = 'none';
-                    
-                    // Show success message
-                    const name = document.getElementById('name').value;
-                    const service = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
-                    const date = document.getElementById('date').value;
-                    const time = document.getElementById('time').value;
-                    const phone = document.getElementById('phone').value;
-                    
-                    successMessage.innerHTML = `
-                        <i class="fas fa-check-circle"></i>
-                        <h4>Appointment Booked Successfully!</h4>
-                        <p>Thank you, ${name}! Your ${service} appointment on ${new Date(date).toLocaleDateString()} at ${time}:00 has been confirmed.</p>
-                        <p>We will contact you at ${phone} shortly to confirm the details.</p>
-                        <p><small>You can also contact us directly at +234 903 503 1312</small></p>
-                    `;
-                    successMessage.style.display = 'block';
+                    const whatsappNumber = "2349052728513"; // Your WhatsApp number
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+                    window.open(whatsappUrl, '_blank');
                     
                     // Reset form
+                    whatsappBookingForm.reset();
+                    
+                    // Close modal after another 2 seconds
                     setTimeout(() => {
-                        appointmentForm.reset();
-                        // Keep the phone field with +234
-                        document.getElementById('phone').value = '+234';
-                        successMessage.style.display = 'none';
-                        submitBtn.style.display = 'flex';
-                        
-                        // Scroll to success message
-                        window.scrollTo({
-                            top: appointmentForm.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }, 5000);
+                        whatsappModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }, 2000);
                 }, 2000);
+            });
+            
+            // Close WhatsApp modal
+            whatsappModalClose.addEventListener('click', function() {
+                whatsappModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            whatsappModal.addEventListener('click', function(e) {
+                if (e.target === whatsappModal) {
+                    whatsappModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
             });
             
             // ===== NEWSLETTER FORM =====
@@ -2872,7 +3252,7 @@
                     `;
                     toast.innerHTML = `
                         <strong><i class="fas fa-phone"></i> Need Help Now?</strong>
-                        <p style="margin: 0.5rem 0; font-size: 0.9rem;">Call us directly at +234 903 503 1312</p>
+                        <p style="margin: 0.5rem 0; font-size: 0.9rem;">Call us directly at 0705 272 8513</p>
                         <button style="background: white; color: var(--primary); border: none; padding: 0.5rem 1rem; border-radius: var(--radius-md); cursor: pointer; width: 100%;">
                             <i class="fas fa-phone"></i> Call Now
                         </button>
@@ -2888,7 +3268,7 @@
                     
                     // Add click event to call button
                     toast.querySelector('button').addEventListener('click', function() {
-                        window.location.href = 'tel:+2349035031312';
+                        window.location.href = 'tel:07052728513';
                     });
                 }
             }
